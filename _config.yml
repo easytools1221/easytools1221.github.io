@@ -1,0 +1,7 @@
+title: Jin-Wei Chang
+domain: easytools1221.github.io
+url: https://easytools1221.github.io
+
+plugins:
+    - jekyll-feed
+    - jekyll-sitemap
