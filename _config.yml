@@ -5,3 +5,8 @@ url: https://easytools1221.github.io
 plugins:
     - jekyll-feed
     - jekyll-sitemap
+
+collections:
+    tools:
+        output: true
+        permalink: /:collection/:name
