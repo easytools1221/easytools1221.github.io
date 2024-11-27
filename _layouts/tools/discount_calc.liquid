@@ -1,0 +1,48 @@
+---
+layout: tools
+---
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <label>待計算金額<input class="form-control" type="number" min="0.0" inputmode="numeric" id="price-input"></label>
+            <label>折數<input class="form-control" type="number" inputmode="numeric" id="discount-input" max="1.0" min="0.0" step="0.1" value="0.9"></label>
+        </div>
+        <div class="col">
+            <label>折扣後金額 (四捨五入)<input class="form-control" type="number" inputmode="numeric" id="price-output" readonly></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary" onclick="quick_discount(0.1)">一折</button>
+            <button class="btn btn-primary" onclick="quick_discount(0.9)">九折</button>
+            <button class="btn btn-primary" onclick="quick_discount(0.95)">九五折</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function update_discount_price(){
+        var price = parseFloat($("#price-input").val()) * parseFloat($("#discount-input").val())
+        $("#price-output").val(price.toFixed(2))
+    }
+
+    function quick_discount(discount){
+        $('#discount-input').val(discount)
+        update_discount_price()
+    }
+
+    $("#price-input").on("change", function(){
+        update_discount_price()
+    })
+    $("#discount-input").on("change", function(){
+        update_discount_price()
+    })
+
+    
+
+</script>
+
+<div class="container">
+    {{ content }}
+</div>

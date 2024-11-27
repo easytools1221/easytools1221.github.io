@@ -4,7 +4,11 @@ layout: default
 
 <div class="container">
     <h2>工具列表</h2>
-    {% for page in site.tools %}
-        <a href="{{page.url}}">{{ page.title }}</a>
+    {% assign tools_pages = site.tools | sort: "order"%}
+    {% for page in tools_pages %}
+        <div class="container">
+            <h3><a href="{{page.url}}">{{ page.title }}</a></h3>
+            <p>{{ page.description }}</p>
+        </div>
     {% endfor %}
 </div>
