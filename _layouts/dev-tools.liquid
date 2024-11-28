@@ -7,35 +7,21 @@ layout: tools
 </div>
 
 <div class="container">
-    <h2>折扣計算機</h2>
+    <h2>新竹停車場</h2>
 </div>
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <label>待計算金額<input class="form-control" type="number" min="0.0" inputmode="numeric" id="price-input"></label>
-            <label>折數<input class="form-control" type="number" inputmode="numeric" id="discount-input" max="1.0" min="0.0" step="0.1" value="0.9"></label>
-        </div>
-        <div class="col">
-            <label>折扣後金額 (四捨五入)<input class="form-control" type="number" inputmode="numeric" id="price-output" readonly></label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <button class="btn btn-primary">一折</button>
-            <button class="btn btn-primary">九折</button>
-            <button class="btn btn-primary">九五折</button>
-        </div>
+    <div id="dev">
+
     </div>
 </div>
 
 <script>
-    $("#price-input").on("change", function(){
-        var price = parseFloat($("#price-input").val()) * parseFloat($("#discount-input").val())
-        $("#price-output").val(price.toFixed(2))
+    fetch("https://opendata.hccg.gov.tw/API/v3/Rest/OpenData/4160E2F860CEE714?take=10&skip=0")
+    .then(function (response){
+        return response.json()
     })
-    $("#discount-input").on("change", function(){
-        var price = parseFloat($("#price-input").val()) * parseFloat($("#discount-input").val())
-        $("#price-output").val(price.toFixed(2))
+    .then(function (data){
+        $("#dev").text(data)
     })
 </script>
 
