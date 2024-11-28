@@ -7,23 +7,37 @@ layout: tools
 </div>
 
 <div class="container">
-    <h2>新竹停車場</h2>
+    <h2>面積換算工具</h2>
 </div>
 <div class="container">
-    <div id="dev">
+    <label><input class="form-control" type="number" inputmode="numeric" id="area-input"></label>
+
+</div>
+
+<div class="container">
+    <h2>溫度換算工具</h2>
+</div>
+<div class="container">
+    <label><input class="form-control" type="number" inputmode="numeric" id="tempt-input"></label>
+
+</div>
+
+{% comment %} <div class="container">
+    <h2>新竹停車場</h2>
+    <div class="container" id="dev">
 
     </div>
 </div>
 
 <script>
-    fetch("https://opendata.hccg.gov.tw/API/v3/Rest/OpenData/4160E2F860CEE714?take=10&skip=0")
-    .then(function (response){
-        return response.json()
-    })
-    .then(function (data){
-        $("#dev").text(data)
-    })
-</script>
+    // fetch("https://opendata.hccg.gov.tw/API/v3/Rest/OpenData/4160E2F860CEE714?take=10&skip=0")
+    // .then(function (response){
+    //     return response.json()
+    // })
+    // .then(function (data){
+    //     $("#dev").text(data)
+    // })
+</script> {% endcomment %}
 
 <hr>
 
