@@ -24,7 +24,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tools</a>
                                 <ul class="dropdown-menu">
-                                    {% assign tools_pages = site.tools | sort: "order"%}
+                                    {% assign tools_pages = site.tools | sort: "order" | sort: "date"%}
                                     {% for page in tools_pages %}
                                         <li> <a class="nav-link" href="{{ page.url }}">{{ page.title }}</a> </li>
                                     {% endfor %}
