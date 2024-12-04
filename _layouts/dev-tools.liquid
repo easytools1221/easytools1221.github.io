@@ -3,35 +3,14 @@ layout: tools
 ---
 
 <div class="container">
-    {{ content }}
-</div>
-
-<div class="container">
     <h2>面積換算工具</h2>
 </div>
 <div class="container">
     <label><input class="form-control" type="number" inputmode="numeric" id="area-input"></label>
-
-</div>
-
-<div class="container">
-    <h2>溫度換算工具</h2>
-</div>
-<div class="container">
-    <label>攝氏(℃)<input class="form-control" type="number" inputmode="numeric" id="tempt-c"></label>
-    <label>華氏(℉)<input class="form-control" type="number" inputmode="numeric" id="tempt-f"></label>
 </div>
 
 <script>
-    $("#tempt-c").on("change", function(){
-        var tempt = parseFloat($("#tempt-c").val()) * 9.0 / 5.0 + 32.0
-        $("#tempt-f").val(tempt.toFixed(2))
-    })
 
-    $("#tempt-f").on("change", function(){
-        var tempt = (parseFloat($("#tempt-f").val()) - 32.0) * 5.0 / 9.0
-        $("#tempt-c").val(tempt.toFixed(2))
-    })
 </script>
 
 {% comment %} <div class="container">
@@ -50,6 +29,12 @@ layout: tools
     //     $("#dev").text(data)
     // })
 </script> {% endcomment %}
+
+<hr>
+
+<div class="container">
+    {{ content }}
+</div>
 
 <hr>
 
