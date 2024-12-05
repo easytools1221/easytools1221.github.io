@@ -6,8 +6,13 @@ plugins:
     - jekyll-feed
     - jekyll-sitemap
     - jekyll-last-modified-at
+    - kramdown
 
 collections:
     tools:
         output: true
         permalink: /:collection/:name
+
+kramdown:
+    math_engine: mathjax
+    syntax_highlighter: rouge

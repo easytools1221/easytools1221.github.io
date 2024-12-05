@@ -10,3 +10,7 @@ order: 99
 
 * item1
 * item2
+
+## Math Test
+
+$S = \alpha + \beta - \frac{\theta}{12\pi}$
