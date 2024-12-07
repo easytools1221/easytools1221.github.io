@@ -1,0 +1,35 @@
+---
+layout: tools
+---
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <label>身高 (cm)<input class="form-control" type="number" inputmode="numeric" id="height-input"></label>
+            <label>體重 (kg)<input class="form-control" type="number" inputmode="numeric" id="weight-input"></label>
+        </div>
+        <div class="col">
+            <label>BMI<input class="form-control" type="number" inputmode="numeric" id="bmi-output" readonly></label>
+        </div>
+    </div>
+</div>
+
+<script>
+    function update_bmi(){
+        let weight = parseFloat($("#weight-input").val())
+        let height = parseFloat($("#height-input").val()) / 100.0
+        var bmi = weight / (height * height)
+        $("#bmi-output").val(bmi.toFixed(2))
+    }
+
+    $("#height-input").on("change", function(){
+        update_bmi()
+    })
+    $("#weight-input").on("change", function(){
+        update_bmi()
+    })
+</script>
+
+<div class="container">
+    {{ content }}
+</div>
