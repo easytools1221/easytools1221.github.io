@@ -6,7 +6,7 @@ group :jekyll_plugins do
     gem "jekyll-feed"
     gem "jekyll-sitemap"
     gem "jekyll-last-modified-at"
-    gem "jekyll-seo"
+    gem "jekyll-seo-tag"
     gem "nokogiri"
 end
 
