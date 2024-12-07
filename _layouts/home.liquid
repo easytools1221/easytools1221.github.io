@@ -4,7 +4,7 @@ layout: default
 
 <div class="container">
     <h1>最新小工具</h1>
-    {% assign tools_pages = site.tools | sort: "date" | reverse %}
+    {% assign tools_pages = site.tools | sort: "last_modified_at" | reverse %}
     {% for page in tools_pages %}
         <div class="container">
             <h3><a href="{{page.url}}">{{ page.title }}</a></h3>

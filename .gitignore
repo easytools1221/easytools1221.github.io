@@ -1,3 +1,5 @@
+# jekyll ignore
 vendor/
 .jekyll-cache
 _site
+Gemfile.lock
