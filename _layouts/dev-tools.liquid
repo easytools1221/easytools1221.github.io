@@ -3,20 +3,36 @@ layout: tools
 ---
 
 <div class="container">
-    <h2>抽籤工具</h2>
-    <p>可以用在多個選項的決策或是抽獎，交由隨機來決定</p>
+    <h1>抽籤工具</h1>
+    <p>可以用在多個選項的決策或是抽獎，交由隨機來決定。目前只完成兩個選項，可以用來擲硬幣。</p>
 </div>
 <div class="container">
-    <label>標題<input class="form-control" type="text" id="title-input"></label>
-    <div class="form-check">
-        <label class="form-check-label"><input class="form-check-input" type="checkbox">選項1</label>
+    <div class="container">
+        <label>標題<input class="form-control" type="text" id="title-input" value="擲硬幣"></label>
+        <label>抽籤結果<input class="form-control" type="text" id="draw-output" readonly></label>
+        <button type="button" class="btn btn-primary" id="draw-btn">開始抽</button>
     </div>
-    <div class="form-check">
-        <label class="form-check-label"><input class="form-check-input" type="checkbox">選項2</label>
+    <hr>
+    <div class="container">
+        <button type="button" class="btn btn-primary" id="add-option-btn">增加選項</button>
     </div>
+    <div class="container" id="draw-options">
+        <label><input class="form-control" type="text" name="draw[]" value="正面"></label>
+        <label><input class="form-control" type="text" name="draw[]" value="反面"></label>
+    </div>
+
 </div>
 
 <script>
+    $("#draw-btn").on("click", function(){
+        let r = Math.floor(Math.random() * $("[name='draw[]']").length)
+        $("#draw-output").val($("[name='draw[]']")[r].value)
+    })
+    
+    $("#add-option-btn").on("click", function(){
+        content = $("#draw-options").html() + `<label><input class="form-control" type="text" name="draw[]" value="新選項${$("[name='draw[]']").length}"></label>`
+        $("#draw-options").html(content)
+    })
 
 </script>
 
