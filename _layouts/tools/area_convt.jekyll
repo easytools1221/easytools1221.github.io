@@ -1,0 +1,28 @@
+---
+layout: tools
+---
+
+<div class="container">
+    <label>平方公尺<input class="form-control" type="number" inputmode="numeric" id="area-sqm"></label>
+    {% comment %} <label>公頃<input class="form-control" type="number" inputmode="numeric" id="area-ha"></label>
+    <label>公畝<input class="form-control" type="number" inputmode="numeric" id="area-a"></label> {% endcomment %}
+    <label>坪<input class="form-control" type="number" inputmode="numeric" id="area-ping"></label>
+    {% comment %} <label>甲<input class="form-control" type="number" inputmode="numeric" id="area-jia"></label>
+    <label>分<input class="form-control" type="number" inputmode="numeric" id="area-fen"></label> {% endcomment %}
+</div>
+
+<script>
+    $("#area-sqm").on("change", function(){
+        var base = parseFloat($("#area-sqm").val())
+        $("#area-ping").val((base * 0.3025))
+    })
+
+    $("#area-ping").on("change", function(){
+        var base = parseFloat($("#area-ping").val())
+        $("#area-sqm").val((base * 3.30579))
+    })
+</script>
+
+<div class="container">
+    {{ content }}
+</div>
