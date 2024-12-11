@@ -43,8 +43,16 @@ layout: tools
     <p>轉換不同的時區，或是轉換到現在的時區。</p>
 </div>
 <div class="container">
+    <label>現在時間<input class="form-control" type="datetime-local" id="current_datetime" value=""></label>
+    <label>轉換時間<input class="form-control" type="datetime-local" id="convert_datetime" value=""></label>
 </div>
 <script>
+    $(document).ready(function(){
+        var current = new Date()
+        $("#current_datetime").val(current.toISOString().substr(0, 19))
+        
+        $("#convert_datetime").val(new Date(current.toLocaleString("en", {timeZone: "Asia/Tokyo"})).toISOString().substr(0, 19))
+    })
 </script>
 
 <hr>
@@ -54,6 +62,18 @@ layout: tools
     <p>產生各種答題紙格式，可以在線上操作或是列印使用。</p>
 </div>
 <div class="container">
+    <div class="form-check form-check-inline">
+        <label class="form-check-label"><input class="form-check-input" type="radio" name="group-1">A</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <label class="form-check-label"><input class="form-check-input" type="radio" name="group-1">B</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <label class="form-check-label"><input class="form-check-input" type="radio" name="group-1">C</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <label class="form-check-label"><input class="form-check-input" type="radio" name="group-1">D</label>
+    </div>
 </div>
 <script>
 </script>
