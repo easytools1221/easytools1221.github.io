@@ -1,0 +1,41 @@
+---
+layout: tools
+---
+
+<div class="container">
+    <label>公克(g)<input class="form-control" type="number" inputmode="numeric" id="weight-gram"></label>
+    <label>公斤(kg)<input class="form-control" type="number" inputmode="numeric" id="weight-kilogram"></label>
+    <label>盎司(oz)<input class="form-control" type="number" inputmode="numeric" id="weight-oz"></label>
+</div>
+
+<script>
+    function update_conversion(id){
+        var base = parseFloat($(id).val())
+        if(id == "#weight-gram"){
+            $("#weight-kilogram").val((base * 0.001))
+            $("#weight-oz").val((base * 0.0352739619))
+        }
+        else if(id == "#weight-kilogram"){
+            $("#weight-gram").val((base * 1000.0))
+            $("#weight-oz").val((base * 35.2739619))
+        }
+        else if(id == "#weight-oz"){
+            $("#weight-gram").val((base * 28.3495231))
+            $("#weight-kilogram").val((base * 0.0283495231))
+        }
+    }
+
+    $("#weight-gram").on("change", function(){
+        update_conversion("#weight-gram")
+    })
+    $("#weight-kilogram").on("change", function(){
+        update_conversion("#weight-kilogram")
+    })
+    $("#weight-oz").on("change", function(){
+        update_conversion("#weight-oz")
+    })
+</script>
+
+<div class="container">
+    {{ content }}
+</div>
