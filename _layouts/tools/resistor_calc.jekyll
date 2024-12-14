@@ -1,0 +1,41 @@
+---
+layout: tools
+---
+
+<div class="container">
+    <h3>串聯</h3>
+    <div class="container">
+        <label>R1<input class="form-control" type="number" inputmode="numeric" id="rs-in-1" value="0"></label>
+        <label>R2<input class="form-control" type="number" inputmode="numeric" id="rs-in-2" value="0"></label>
+        <label>R串聯<input class="form-control" type="number" inputmode="numeric" id="rs-out" readonly></label>
+    </div>
+    <h3>並聯</h3>
+    <div class="container">
+        <label>R1<input class="form-control" type="number" inputmode="numeric" id="rp-in-1" value="0"></label>
+        <label>R2<input class="form-control" type="number" inputmode="numeric" id="rp-in-2" value="0"></label>
+        <label>R並聯<input class="form-control" type="number" inputmode="numeric" id="rp-out" readonly></label>
+    </div>
+</div>
+<script>
+    $("[id^='rs-in']").on("change", function(){
+        var r = 0
+        var vals = $("[id^='rs-in']").map(function(){ return $(this).val()})
+        for(var val of vals){
+            r += parseFloat(val)
+        } 
+        $("#rs-out").val(r)
+    })
+
+    $("[id^='rp-in']").on("change", function(){
+        var r = 0
+        var vals = $("[id^='rp-in']").map(function(){ return $(this).val()})
+        for(var val of vals){
+            r += 1.0 / parseFloat(val)
+        } 
+        $("#rp-out").val(1.0 / r)
+    })
+</script>
+
+<div class="container">
+    {{ content }}
+</div>
