@@ -1,0 +1,30 @@
+---
+layout: tools
+---
+
+<div class="container">
+    <label>十進位<input class="form-control" type="number" inputmode="numeric" id="digi-dec"></label>
+    <label>十六進位<input class="form-control" type="text" id="digi-hex" readonly></label>
+    <label>八進位<input class="form-control" type="text" id="digi-oct" readonly></label>
+    <label>二進位<input class="form-control" type="text" id="digi-bin" readonly></label>
+</div>
+
+<script>
+    function update_conversion(id){
+        var base = parseInt($(id).val(), 10)
+        if(id == "#digi-dec"){
+            $("#digi-hex").val((base).toString(16).toUpperCase())
+            $("#digi-oct").val((base).toString(8))
+            $("#digi-bin").val((base).toString(2))
+        }
+    }
+
+    $("[id^='digi']").on("change", function(){
+        update_conversion(`#${this.id}`)
+    })
+
+</script>
+
+<div class="container">
+    {{ content }}
+</div>
