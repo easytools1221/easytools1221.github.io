@@ -14,12 +14,12 @@ layout: tools
 <script>
     $("#area-sqm").on("change", function(){
         var base = parseFloat($("#area-sqm").val())
-        $("#area-ping").val((base * 0.3025))
+        $("#area-ping").val((base * 0.3025).toPrecision(3))
     })
 
     $("#area-ping").on("change", function(){
         var base = parseFloat($("#area-ping").val())
-        $("#area-sqm").val((base * 3.30579))
+        $("#area-sqm").val((base * 3.30579).toPrecision(3))
     })
 </script>
 
