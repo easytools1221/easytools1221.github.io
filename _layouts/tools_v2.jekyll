@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="container">
+    <h1>{{ page.title }}</h1>
+</div>
+
+<hr>
+
+<div class="container">
+    {{ page.description }}
+</div>
+
+<hr>
+
+<div class="container">
+    {% assign function_file = "tools/" |  append: page.slug |  append: '.html'  %}
+    {% include {{function_file}} %}
+</div>
+
+<hr>
+
+<div class="container">
+    {{ content }}
+</div>
