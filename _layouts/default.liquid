@@ -26,32 +26,30 @@
         </script>
     </head>
     <body>
-        <div class="container">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                    <a id="name" class="navbar-brand" href="/">{{ site.title }}</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <ul class="navbar-nav">
-                            <a class="nav-link" href="/">首頁</a>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">工具</a>
-                                <ul class="dropdown-menu">
-                                    {% assign tools_pages = site.tools | sort: "last_modified_at" | reverse %}
-                                    {% for page in tools_pages %}
-                                        <li> <a class="nav-link" href="{{ page.url }}">{{ page.title }}</a> </li>
-                                    {% endfor %}
-                                </ul>
-                            </li>
-                            <a class="nav-link" href="/dev-tools">開發中</a>
-                            <a class="nav-link" href="/about">關於我</a>
-                        </ul>
-                    </div>
+        <nav class="navbar navbar-expand-lg sticky-top bg-primary" data-bs-theme="dark">
+            <div class="container-md">
+                <a id="name" class="navbar-brand" href="/">{{ site.title }}</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <ul class="navbar-nav">
+                        <a class="nav-link" href="/">首頁</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">工具</a>
+                            <ul class="dropdown-menu">
+                                {% assign tools_pages = site.tools | sort: "last_modified_at" | reverse %}
+                                {% for page in tools_pages %}
+                                    <li> <a class="nav-link" href="{{ page.url }}">{{ page.title }}</a> </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        <a class="nav-link" href="/dev-tools">開發中</a>
+                        <a class="nav-link" href="/about">關於我</a>
+                    </ul>
                 </div>
-            </nav>
-        </div>
+            </div>
+        </nav>
 
 
         <div class="container">
