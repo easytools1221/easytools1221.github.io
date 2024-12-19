@@ -1,8 +1,11 @@
 ---
 title: 微波時間計算機
 language: zh-tw
-layout: tools/microwave_calc
+layout: tools_v2
 description: 說明書上的微波功率總是跟家裡的不一樣嗎？直接來計算家裡的微波爐需要加熱多少時間吧！
 order: 0
 ---
 
+# 如何計算微波時間？
+
+說明書上的微波時間和功率，不一定可以直接對應到平時使用的微波爐。但我們可以用加熱到相同程度為目標，換算適合的時間。
