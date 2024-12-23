@@ -1,8 +1,12 @@
 ---
 title: 溫度換算工具
 language: zh-tw
-layout: tools/tempt_convt
+layout: tools_v2
 description: 基本的攝氏與華氏溫度轉換工具。
 order: 0
 ---
 
+## 溫標
+
+* 攝氏：定義水的凝點為0℃，水的沸點為100℃，中間等分100份，每份1℃。
+* 華氏：定義冰的熔點為32℉，水的沸點為212℉，中間等分180份，每份1℉。
