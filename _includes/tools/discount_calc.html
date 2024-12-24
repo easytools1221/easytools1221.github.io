@@ -5,14 +5,18 @@
             <label>折數<input class="form-control" type="number" inputmode="numeric" id="discount-input" max="1.0" min="0.0" step="0.1" value="0.9"></label>
         </div>
         <div class="col">
-            <label>折扣後金額 (四捨五入)<input class="form-control" type="number" inputmode="numeric" id="price-output" readonly></label>
+            <label>折扣後金額<input class="form-control" type="number" inputmode="numeric" id="price-output" readonly></label>
+            <label>折扣省下了...<input class="form-control" type="number" inputmode="numeric" id="discount-output" readonly></label>
         </div>
     </div>
     <div class="row">
         <label class="form-check-label"><input class="form-check-input" type="checkbox" id="service-fee" onchange="update_discount_price()">10%服務費</label>
+        <label class="form-check-label"><input class="form-check-input" type="checkbox" id="service-ori" onchange="update_discount_price()">原價計服務費</label>
     </div>
     <div class="row">
+        <label>常用折扣</label>
         <div class="col">
+            <button class="btn btn-primary" onclick="quick_discount(1.0)">不打折</button>
             <button class="btn btn-primary" onclick="quick_discount(0.1)">一折</button>
             <button class="btn btn-primary" onclick="quick_discount(0.85)">八五折</button>
             <button class="btn btn-primary" onclick="quick_discount(0.9)">九折</button>
@@ -23,11 +27,19 @@
 
 <script>
     function update_discount_price(){
-        var price = parseFloat($("#price-input").val()) * parseFloat($("#discount-input").val())
+        var ori_price = parseFloat($("#price-input").val())
+        var discnt_price = ori_price * parseFloat($("#discount-input").val())
         if($("#service-fee").prop("checked")){
-            price *= 1.1
+            if($("#service-ori").prop("checked")){
+                discnt_price = discnt_price + ori_price * 0.1
+            }
+            else{
+                discnt_price *= 1.1 
+            }
+            ori_price *= 1.1
         }
-        $("#price-output").val(price.toFixed(2))
+        $("#price-output").val(discnt_price.toFixed(2))
+        $("#discount-output").val((ori_price - discnt_price).toFixed(2))
     }
 
     function quick_discount(discount){
