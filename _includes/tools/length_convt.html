@@ -1,0 +1,33 @@
+<div class="container">
+    <label>公尺<input class="form-control" type="number" inputmode="numeric" id="len-m"></label>
+    <label>公分<input class="form-control" type="number" inputmode="numeric" id="len-cm"></label>
+    <label>英吋<input class="form-control" type="number" inputmode="numeric" id="len-inch"></label>
+</div>
+
+<script>
+    function update_conversion(id){
+        var input = parseFloat($(id).val())
+        
+        // Convert to meter as base
+        var base = 0;
+
+        if (id === "#len-m") {
+            base = input;
+        } else if (id === "#len-cm") {
+            base = input / 100;
+        } else if (id === "#len-inch") {
+            base = input / 39.37; // 1 inch = 0.0254 meters
+        }
+
+        // Update other input fields
+        $("#len-m").val(base.toPrecision(3));
+        $("#len-cm").val((base * 100).toPrecision(3));
+        $("#len-inch").val((base * 39.37).toPrecision(3));
+    }
+
+    $("[id^='len']").on("change", function(){
+        console.log(`#${this.id}`)
+        update_conversion(`#${this.id}`)
+    })
+
+</script>
