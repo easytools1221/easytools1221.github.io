@@ -1,7 +1,3 @@
----
-layout: tools
----
-
 <div class="container">
     <label>平方公尺<input class="form-control" type="number" inputmode="numeric" id="area-sqm"></label>
     {% comment %} <label>公頃<input class="form-control" type="number" inputmode="numeric" id="area-ha"></label>
@@ -14,15 +10,11 @@ layout: tools
 <script>
     $("#area-sqm").on("change", function(){
         var base = parseFloat($("#area-sqm").val())
-        $("#area-ping").val((base * 0.3025).toFixed(3))
+        $("#area-ping").val((base * 0.3025).toFixed(5))
     })
 
     $("#area-ping").on("change", function(){
         var base = parseFloat($("#area-ping").val())
-        $("#area-sqm").val((base * 3.30579).toFixed(3))
+        $("#area-sqm").val((base * 3.30579).toFixed(5))
     })
 </script>
-
-<div class="container">
-    {{ content }}
-</div>
