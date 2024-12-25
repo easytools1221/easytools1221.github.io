@@ -4,6 +4,7 @@
         <title>{{ page.title }} - {{ site.title }}</title>
         
         <link rel="icon" sizes="any" type="image/svg+xml" href="/favicon.svg">
+
         <link rel="manifest" href="/manifest.json" />
 
         <meta charset="utf-8">
@@ -37,7 +38,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav me-auto">
                         <a class="nav-link" href="/">首頁</a>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">工具</a>
@@ -51,6 +52,9 @@
                         <a class="nav-link" href="/dev-tools">開發中</a>
                         <a class="nav-link" href="/about">關於我</a>
                     </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <button id="pwa-install" class="btn btn-primary" type="button" hidden>安裝APP</button>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -59,6 +63,27 @@
         <div class="container">
             {{ content }}
         </div>
+
+        <script>
+            // PWA installation
+            let installPrompt = null;
+            const installButton = document.querySelector("#pwa-install");
+            window.addEventListener("beforeinstallprompt", (event) => {
+                event.preventDefault();
+                installPrompt = event;
+                installButton.removeAttribute("hidden");
+            });
+
+            installButton.addEventListener("click", async () => {
+                if (!installPrompt) {
+                    return;
+                }
+                const result = await installPrompt.prompt();
+                console.log(`Install prompt was: ${result.outcome}`);
+                installPrompt = null;
+                installButton.setAttribute("hidden", "");
+            });
+        </script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
         
