@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <label>開始日期<input class="form-control" id="date-begin" type="date"></label>
+            <label>結束日期<input class="form-control" id="date-end" type="date"></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>差距天數<input class="form-control" id="date-diff" type="number" inputmode="numeric" readonly></label>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $("#date-begin").val(new Date().toISOString().substr(0, 10))
+        $("#date-end").val(new Date().toISOString().substr(0, 10))
+    })
+
+    function update_diff(){
+        let begin = new Date($("#date-begin").val())
+        let end = new Date($("#date-end").val())
+        $("#date-diff").val(Math.floor((end-begin) / (1000 * 60 * 60 * 24)))
+    }
+
+    $("#date-begin").on("change", function(){
+        update_diff()
+    })
+    $("#date-end").on("change", function(){
+        update_diff()
+    })
+</script>
