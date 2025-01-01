@@ -56,7 +56,9 @@
                                 {% endfor %}
                             </ul>
                         </li>
+                        {% if jekyll.environment == "development" %}
                         <a class="nav-link" href="/dev-tools">開發中</a>
+                        {% endif %}
                         <a class="nav-link" href="/about">關於我</a>
                     </ul>
                     <ul class="navbar-nav ms-auto">
