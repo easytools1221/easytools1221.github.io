@@ -1,20 +1,77 @@
 <div class="container">
-    <label>平方公尺<input class="form-control" type="number" inputmode="numeric" id="area-sqm"></label>
-    {% comment %} <label>公頃<input class="form-control" type="number" inputmode="numeric" id="area-ha"></label>
-    <label>公畝<input class="form-control" type="number" inputmode="numeric" id="area-a"></label> {% endcomment %}
+    <h2>公制單位</h2>
+    <label>平方公尺<input class="form-control" type="number" inputmode="numeric" id="area-m2"></label>
+    <label>平方公里<input class="form-control" type="number" inputmode="numeric" id="area-km2"></label>
+    <label>公頃<input class="form-control" type="number" inputmode="numeric" id="area-ha"></label>
+    <label>公畝<input class="form-control" type="number" inputmode="numeric" id="area-are"></label>
+
+    <h2>英制單位</h2>
+    <label>英畝<input class="form-control" type="number" inputmode="numeric" id="area-acre"></label>
+
+    <h2>台灣單位</h2>
     <label>坪<input class="form-control" type="number" inputmode="numeric" id="area-ping"></label>
-    {% comment %} <label>甲<input class="form-control" type="number" inputmode="numeric" id="area-jia"></label>
-    <label>分<input class="form-control" type="number" inputmode="numeric" id="area-fen"></label> {% endcomment %}
+    <label>甲<input class="form-control" type="number" inputmode="numeric" id="area-jia"></label>
+    <label>分<input class="form-control" type="number" inputmode="numeric" id="area-fen"></label>
 </div>
 
 <script>
-    $("#area-sqm").on("change", function(){
-        var base = parseFloat($("#area-sqm").val())
-        $("#area-ping").val((base * 0.3025).toFixed(5))
-    })
+    let num_points = 6;
 
-    $("#area-ping").on("change", function(){
-        var base = parseFloat($("#area-ping").val())
-        $("#area-sqm").val((base * 3.30579).toFixed(5))
+    function update_conversion(id){
+        var input = parseFloat($(id).val())
+        
+        // Convert to meter square as base
+        var base = 0;
+
+        if(id === "#area-m2") {
+            base = input;
+        } 
+        else if(id === "#area-km2") {
+            base = input * 1000000;
+        } 
+        else if(id === "#area-ping") {
+            base = input / 0.3025;
+        }
+        else if(id === "#area-ha") {
+            base = input * 10000;
+        }
+        else if(id === "#area-are") {
+            base = input * 100;
+        }
+        else if(id === "#area-jia") {
+            base = input * 9699.17;
+        }
+        else if(id === "#area-fen") {
+            base = input * 969.917;
+        }
+        else if(id === "#area-acre") {
+            base = input / 0.00025;
+        }
+
+
+        // Update other input fields and strip zeros after decimal point
+        $("#area-m2").val(strip_zeros_after_decimal(base.toFixed(num_points)));
+        $("#area-km2").val(strip_zeros_after_decimal((base / 1000000).toFixed(num_points)));
+        $("#area-ping").val(strip_zeros_after_decimal((base * 0.3025).toFixed(num_points)));
+        $("#area-ha").val(strip_zeros_after_decimal((base / 10000).toFixed(num_points)));
+        $("#area-are").val(strip_zeros_after_decimal((base / 100).toFixed(num_points)));
+        $("#area-jia").val(strip_zeros_after_decimal((base / 9699.17).toFixed(num_points)));
+        $("#area-fen").val(strip_zeros_after_decimal((base / 969.917).toFixed(num_points)));
+        $("#area-acre").val(strip_zeros_after_decimal((base * 0.00025).toFixed(num_points)));
+
+    }
+
+    function strip_zeros_after_decimal(num) {
+        // if there is a decimal number
+        if(num.includes('.')) {
+            // remove trailing zeros
+            return num.replace(/\.?0*$/, '');
+        }
+        return num;
+    }
+
+    $("[id^='area']").on("change", function(){
+        console.log(`#${this.id}`)
+        update_conversion(`#${this.id}`)
     })
 </script>
