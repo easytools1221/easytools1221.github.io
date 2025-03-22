@@ -1,13 +1,25 @@
 <div class="container">
     <label>工作電壓 (V) <input class="form-control" type="number" inputmode="numeric" id="powerbank-voltage" value="3.7" step="0.1"></label>
-    <label>電容量 (mAh)<input class="form-control" type="number" inputmode="numeric" id="powerbank-capacity-mah" value="10000.00"></label>
-    <label>電容量 (Wh)<input class="form-control" type="number" inputmode="numeric" id="powerbank-capacity-wh" value="37.00"></label>
+    <label>電容量 (mAh)<input class="form-control" type="number" inputmode="numeric" id="powerbank-capacity-mah" value="10000"></label>
+    <label>電容量 (Wh)<input class="form-control" type="number" inputmode="numeric" id="powerbank-capacity-wh" value="37"></label>
 
     <h2>常用電壓</h2>
     <button type="button" class="btn btn-primary" id="powerbank-voltage-3p7">3.7V</button>
     <button type="button" class="btn btn-primary" id="powerbank-voltage-5">5V</button>
     <button type="button" class="btn btn-primary" id="powerbank-voltage-9">9V</button>
     <button type="button" class="btn btn-primary" id="powerbank-voltage-12">12V</button>    
+
+    <h2>常用容量</h2>
+    <button type="button" class="btn btn-primary" id="powerbank-capacity-mah-5000">5000mAh</button>
+    <button type="button" class="btn btn-primary" id="powerbank-capacity-mah-10000">10000mAh</button>
+    <button type="button" class="btn btn-primary" id="powerbank-capacity-mah-20000">20000mAh</button>
+    <button type="button" class="btn btn-primary" id="powerbank-capacity-mah-40000">40000mAh</button>
+
+    <h2>常用容量 (Wh)</h2>
+    <button type="button" class="btn btn-primary" id="powerbank-capacity-wh-18p5">18.5Wh</button>
+    <button type="button" class="btn btn-primary" id="powerbank-capacity-wh-37">37Wh</button>
+    <button type="button" class="btn btn-primary" id="powerbank-capacity-wh-74">74Wh</button>
+    <button type="button" class="btn btn-primary" id="powerbank-capacity-wh-148">148Wh</button>
 </div>
 
 <script>
@@ -16,21 +28,21 @@
             var voltage = parseFloat($("#powerbank-voltage").val())
             var capacity_mah = parseFloat($(this).val())
             var capacity_wh = capacity_mah * voltage / 1000
-            $("#powerbank-capacity-wh").val(capacity_wh.toFixed(2))
+            $("#powerbank-capacity-wh").val(strip_zeros_after_decimal(capacity_wh.toFixed(2)))
         })
 
         $("#powerbank-capacity-wh").on("input", function(){
             var voltage = parseFloat($("#powerbank-voltage").val())
             var capacity_wh = parseFloat($(this).val())
             var capacity_mah = capacity_wh * 1000 / voltage
-            $("#powerbank-capacity-mah").val(capacity_mah.toFixed(2))
+            $("#powerbank-capacity-mah").val(strip_zeros_after_decimal(capacity_mah.toFixed(2)))
         })
 
         $("#powerbank-voltage").on("change", function(){
             var voltage = parseFloat($(this).val())
             var capacity_mah = parseFloat($("#powerbank-capacity-mah").val())
             var capacity_wh = capacity_mah * voltage / 1000
-            $("#powerbank-capacity-wh").val(capacity_wh.toFixed(2))
+            $("#powerbank-capacity-wh").val(strip_zeros_after_decimal(capacity_wh.toFixed(2)))
         })
 
         // voltage buttons click event
@@ -39,8 +51,27 @@
             $("#powerbank-voltage").val(voltage)
             $("#powerbank-voltage").trigger("change")
         })
+
+        // capacity buttons click event mah
+        $("[id^='powerbank-capacity-mah-']").on("click", function(){
+            var capacity = parseFloat($(this).text().split("mAh")[0])
+            $("#powerbank-capacity-mah").val(capacity)
+            $("#powerbank-capacity-mah").trigger("input")
+        })
+
+        // capacity buttons click event wh
+        $("[id^='powerbank-capacity-wh-']").on("click", function(){
+            var capacity = parseFloat($(this).text().split("Wh")[0])
+            $("#powerbank-capacity-wh").val(capacity)
+            $("#powerbank-capacity-wh").trigger("input")
+        })
     })
 
-    
+    function strip_zeros_after_decimal(num) {
+        if(num.includes('.')) {
+            return num.replace(/\.?0*$/, '');
+        }
+        return num;
+    }
 
 </script>
