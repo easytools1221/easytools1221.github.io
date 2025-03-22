@@ -9,6 +9,9 @@ layout: default
         <div class="container">
             <h3><a href="{{page.url}}">{{ page.title }}</a></h3>
             <p>{{ page.description }}</p>
+            {% if jekyll.environment == "development" %}
+                <p>最後更新時間: {{ page.last_modified_at }}</p>
+            {% endif %}
         </div>
     {% endfor %}
 </div>
