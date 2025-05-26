@@ -2,7 +2,7 @@
 title: 行動電源計算工具
 language: zh-tw
 layout: tools_v2
-description: 這是行動電源計算工具，幫助您快速計算行動電源的容量。
+description: 這是行動電源計算工具，幫助您快速換算行動電源的容量單位，以及評估要購買多大的行動電源來符合您的需求。
 order: 0
 ---
 

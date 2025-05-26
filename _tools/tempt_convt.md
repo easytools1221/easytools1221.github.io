@@ -2,7 +2,7 @@
 title: 溫度換算工具
 language: zh-tw
 layout: tools_v2
-description: 基本的攝氏與華氏溫度轉換工具。
+description: 基本的攝氏與華氏溫度轉換工具。出國旅遊時查看天氣資訊，或單純想了解不同溫標的對應關係，都能快速準確地進行轉換。 
 order: 0
 ---
 

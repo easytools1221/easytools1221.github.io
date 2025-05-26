@@ -2,7 +2,7 @@
 title: 長度換算工具
 language: zh-tw
 layout: tools_v2
-description: 換算常見的長度單位。
+description: 無論是公分或公尺，這款工具都能快速轉換各種常見長度單位。測量時不再煩惱單位問題，讓你的計算更精準。
 order: 0
 ---
 

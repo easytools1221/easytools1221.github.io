@@ -2,7 +2,7 @@
 title: 面積換算工具
 language: zh-tw
 layout: tools_v2
-description: 換算常見的面積單位。
+description: 幫你快速換算常見的面積單位，包含公制單位，以及在房屋土地上常常使用的面積單位。
 order: 0
 ---
 

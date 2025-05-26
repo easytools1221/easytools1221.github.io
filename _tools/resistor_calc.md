@@ -2,7 +2,7 @@
 title: 電阻計算
 language: zh-tw
 layout: tools/resistor_calc
-description: 計算電阻，一些常用的連結方式的電阻值。
+description: 需要計算電阻值嗎？這款工具提供常用電路連接方式的電阻計算。無論是串聯或並聯，都能精準算出電阻值，讓電路設計更簡單。
 order: 0
 ---
 

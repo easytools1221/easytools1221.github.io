@@ -2,7 +2,7 @@
 title: 重量換算工具
 language: zh-tw
 layout: tools/weight_convt
-description: 換算常見的重量單位。
+description: 輕鬆轉換各種常見重量單位。無論是公斤或公克，只需簡單輸入數值，就能快速得到你想要的單位，讓重量換算變得更方便。
 order: 0
 ---
 

@@ -2,7 +2,7 @@
 title: 抽籤工具
 language: zh-tw
 layout: tools/draw
-description: 可以用在多個選項的決策或是抽獎，交由隨機來決定。目前只完成兩個選項，可以用來擲硬幣。
+description: 選擇困難症發作，或是需要一個隨機抽獎工具？就讓抽籤工具來幫你做決定！目前已支援兩個選項的隨機選擇，如同擲硬幣一般方便。
 order: 0
 ---
 

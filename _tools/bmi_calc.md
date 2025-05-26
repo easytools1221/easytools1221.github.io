@@ -2,7 +2,7 @@
 title: BMI計算機
 language: zh-tw
 layout: tools_v2
-description: 計算BMI，檢查自己的健康。
+description: 關心自己的健康嗎？輸入身高和體重，立即計算你的 BMI 值。輕鬆掌握自己的身體狀況，為健康管理提供參考依據。
 order: 0
 ---
 

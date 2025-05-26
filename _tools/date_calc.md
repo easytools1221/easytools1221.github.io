@@ -2,7 +2,7 @@
 title: 日期天數計算
 language: zh-tw
 layout: tools_v2
-description: 計算兩個日期之間的差距天數。
+description: 想知道兩個日期之間相隔多少天？這個工具能精準計算日期天數。無論是規劃行程、紀念日，或單純想知道時間間隔，都能快速得到答案。
 order: 0
 ---
 
