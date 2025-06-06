@@ -1,0 +1,34 @@
+{
+    "tools": {
+        "discount_calc": {
+            "zh-tw": {
+                "original_price": "原始金額",
+                "discount_percentage": "折數",
+                "discounted_price": "折扣後金額",
+                "discounted_savings": "折扣省下了...",
+                "service_charge": "10%服務費",
+                "ori_service_charge": "原價計服務費",
+                "common_discounts": "常用折數",
+                "discount_none": "不打折",
+                "discount_90": "一折",
+                "discount_15": "八五折",
+                "discount_10": "九折",
+                "discount_5": "九五折"
+            },
+            "en": {
+                "original_price": "Original price",
+                "discount_percentage": "Discount percentage",
+                "discounted_price": "Discounted price",
+                "discounted_savings": "Discounted savings",
+                "service_charge": "10% service charge",
+                "ori_service_charge": "Service charge on original price",
+                "common_discounts": "Common discounts",
+                "discount_none": "No discount",
+                "discount_90": "90% off",
+                "discount_15": "15% off",
+                "discount_10": "10% off",
+                "discount_5": "5% off"
+            }
+        }
+    }
+}

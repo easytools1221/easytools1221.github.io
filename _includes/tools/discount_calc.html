@@ -1,26 +1,28 @@
+{% assign text = site.data.text.tools["discount_calc"][page.language] %}
+
 <div class="container">
     <div class="row">
         <div class="col">
-            <label>待計算金額<input class="form-control" type="number" min="0.0" inputmode="numeric" id="price-input" value="0"></label>
-            <label>折數<input class="form-control" type="number" inputmode="numeric" id="discount-input" max="1.0" min="0.0" step="0.1" value="0.9"></label>
+            <label>{{ text.original_price }}<input class="form-control" type="number" min="0.0" inputmode="numeric" id="price-input" value="0"></label>
+            <label>{{ text.discount_percentage }}<input class="form-control" type="number" inputmode="numeric" id="discount-input" max="1.0" min="0.0" step="0.1" value="0.9"></label>
         </div>
         <div class="col">
-            <label>折扣後金額<input class="form-control" type="number" inputmode="numeric" id="price-output" readonly></label>
-            <label>折扣省下了...<input class="form-control" type="number" inputmode="numeric" id="discount-output" readonly></label>
+            <label>{{ text.discounted_price }}<input class="form-control" type="number" inputmode="numeric" id="price-output" readonly></label>
+            <label>{{ text.discounted_savings }}<input class="form-control" type="number" inputmode="numeric" id="discount-output" readonly></label>
         </div>
     </div>
     <div class="row">
-        <label class="form-check-label"><input class="form-check-input" type="checkbox" id="service-fee" onchange="update_discount_price()">10%服務費</label>
-        <label class="form-check-label"><input class="form-check-input" type="checkbox" id="service-ori" onchange="update_discount_price()">原價計服務費</label>
+        <label class="form-check-label"><input class="form-check-input" type="checkbox" id="service-fee" onchange="update_discount_price()">{{ text.service_charge }}</label>
+        <label class="form-check-label"><input class="form-check-input" type="checkbox" id="service-ori" onchange="update_discount_price()">{{ text.ori_service_charge }}</label>
     </div>
     <div class="row">
-        <label>常用折扣</label>
+        <label>{{ text.common_discounts }}</label>
         <div class="col">
-            <button class="btn btn-primary" onclick="quick_discount(1.0)">不打折</button>
-            <button class="btn btn-primary" onclick="quick_discount(0.1)">一折</button>
-            <button class="btn btn-primary" onclick="quick_discount(0.85)">八五折</button>
-            <button class="btn btn-primary" onclick="quick_discount(0.9)">九折</button>
-            <button class="btn btn-primary" onclick="quick_discount(0.95)">九五折</button>
+            <button class="btn btn-primary" onclick="quick_discount(1.0)">{{ text.discount_none }}</button>
+            <button class="btn btn-primary" onclick="quick_discount(0.1)">{{ text.discount_90 }}</button>
+            <button class="btn btn-primary" onclick="quick_discount(0.85)">{{ text.discount_15 }}</button>
+            <button class="btn btn-primary" onclick="quick_discount(0.9)">{{ text.discount_10 }}</button>
+            <button class="btn btn-primary" onclick="quick_discount(0.95)">{{ text.discount_5 }}</button>
         </div>
     </div>
 </div>
