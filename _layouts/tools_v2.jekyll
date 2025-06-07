@@ -3,20 +3,17 @@ layout: default
 ---
 
 <div class="container">
-    <h1>{{ page.title }}</h1>
+    <section class="mb-4 text-center">
+        <h1>{{ page.title }}</h1>
+        <p class="text-muted">{{ page.description }}</p>
+    </section>
 </div>
 
-<hr>
-
-<div class="container">
-    {{ page.description }}
-</div>
-
-<hr>
-
-<div class="container">
-    {% assign function_file = "tools/" |  append: page.slug |  append: '.html'  %}
-    {% include {{function_file}} %}
+<div class="card shadow-sm">
+    <div class="card-body">
+        {% assign function_file = "tools/" |  append: page.slug |  append: '.html'  %}
+        {% include {{function_file}} %}
+    </div>
 </div>
 
 <hr>
