@@ -29,15 +29,29 @@
             }
         </script>
 
+        {% if page.layout == "tools_v3" %}
+        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        {% elsif page.layout == "tools_v2" %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        {% elsif page.layout == "tools" %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        {% endif %}
+        
+        {% if page.layout == "home" %}
+
+        {% else %}
         <script>
             window.MathJax = {
+                loader: {
+                    load: ['input/tex', 'output/chtml']
+                },
                 tex: {
                     inlineMath: [['$', '$'], ['\\(', '\\)']]
                 }
             };
         </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        {% endif %}
     </head>
     <body>
         <nav class="navbar navbar-expand-lg sticky-top bg-primary" data-bs-theme="dark">
@@ -97,7 +111,7 @@
             });
         </script>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
         
     </body>
 </html>
