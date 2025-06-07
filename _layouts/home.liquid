@@ -3,15 +3,21 @@ layout: default
 ---
 
 <div class="container">
-    <h1>最新小工具</h1>
+    <h2>最新小工具</h2>
     {% assign tools_pages = site.tools | concat: site.tools_en | sort: "last_modified_at" | reverse %}
+    <div class="row g-4">
     {% for page in tools_pages %}
-        <div class="container">
-            <h3><a href="{{page.url}}">{{ page.title }}</a></h3>
-            <p>{{ page.description }}</p>
-            {% if jekyll.environment == "development" %}
-                <p>最後更新時間: {{ page.last_modified_at }}</p>
-            {% endif %}
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="{{page.url}}">{{ page.title }}</a></h5>
+                    <p class="card-text">{{ page.description }}</p>
+                    {% if jekyll.environment == "development" %}
+                        <p>最後更新時間: {{ page.last_modified_at }}</p>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     {% endfor %}
+    </div>
 </div>
