@@ -1,0 +1,165 @@
+.lottery-type-btn {
+    border-radius: 25px;
+    padding: 10px 25px;
+    margin: 5px;
+    border: 2px solid #ddd;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.lottery-type-btn.active {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border-color: #667eea;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.number-input {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 10px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            min-height: 60px;
+            border: 2px dashed #ddd;
+        }
+        
+        .number-tag {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .number-tag.excluded {
+            background: linear-gradient(45deg, #95a5a6, #7f8c8d);
+        }
+        
+        .number-tag .remove-btn {
+            cursor: pointer;
+            padding: 2px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        .number-tag .remove-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        .generate-btn {
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            border: none;
+            border-radius: 25px;
+            padding: 15px 40px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin: 20px 0;
+        }
+        
+        .generate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(46, 204, 113, 0.4);
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+        }
+        
+        .result-area {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .lottery-numbers {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .lottery-number {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+            animation: bounce 0.6s ease;
+        }
+        
+        .lottery-number.normal {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+        }
+        
+        .lottery-number.special {
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+            color: white;
+        }
+        
+        .number-input-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin: 10px 0;
+        }
+        
+        .number-input-field {
+            width: 80px;
+            text-align: center;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            padding: 8px;
+        }
+        
+        .add-btn {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .add-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% { transform: translate3d(0,0,0); }
+            40%, 43% { transform: translate3d(0,-15px,0); }
+            70% { transform: translate3d(0,-7px,0); }
+            90% { transform: translate3d(0,-2px,0); }
+        }

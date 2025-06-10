@@ -21,6 +21,9 @@
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
         <link href="/css/style.css" rel="stylesheet">
+        {% if page.css_style %}
+        <link href="/css/{{ page.css_style }}" rel="stylesheet">    
+        {% endif %}
         
         <script>
             // Service worker
@@ -80,6 +83,9 @@
         <div class="container p-1">
             {{ content }}
         </div>
+
+        <footer class="container">
+        </footer>
 
         <script>
             // PWA installation

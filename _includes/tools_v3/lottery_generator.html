@@ -1,0 +1,51 @@
+<!-- 樂透類型選擇 -->
+<div class="text-center mb-4">
+    <button class="lottery-type-btn active" data-type="lotto649">大樂透 (6/49)</button>
+    <button class="lottery-type-btn" data-type="superlotto">威力彩 (6/38+1/8)</button> 
+</div>
+
+<!-- 排除號碼區域 -->
+<div class="section-title">
+    <i class="fas fa-ban text-danger"></i> 排除號碼
+</div>
+<div class="number-input-group">
+    <input type="number" class="number-input-field" id="excludeInput" placeholder="號碼" min="1">
+    <button class="add-btn" onclick="addExcludeNumber()">
+        <i class="fas fa-plus"></i> 排除
+    </button>
+    <button class="add-btn" onclick="clearExcludeNumbers()" style="background: linear-gradient(45deg, #e74c3c, #c0392b);">
+        <i class="fas fa-trash"></i> 清空
+    </button>
+</div>
+<div class="number-input" id="excludeNumbers">
+    <span style="color: #999; font-style: italic;">尚未設定排除號碼</span>
+</div>
+
+
+<!-- 偏好號碼區域 -->
+<div class="section-title">
+    <i class="fas fa-heart text-success"></i> 偏好號碼
+</div>
+<div class="number-input-group">
+    <input type="number" class="number-input-field" id="preferInput" placeholder="號碼" min="1">
+    <button class="add-btn" onclick="addPreferNumber()">
+        <i class="fas fa-plus"></i> 偏好
+    </button>
+    <button class="add-btn" onclick="clearPreferNumbers()" style="background: linear-gradient(45deg, #e74c3c, #c0392b);">
+        <i class="fas fa-trash"></i> 清空
+    </button>
+</div>
+<div class="number-input" id="preferNumbers">
+    <span style="color: #999; font-style: italic;">尚未設定偏好號碼</span>
+</div>
+
+<!-- 產生按鈕 -->
+<button class="generate-btn" onclick="generateNumbers()">
+    <i class="fas fa-magic"></i> 產生號碼
+</button>
+
+<!-- 結果顯示區域 -->
+<div class="result-area" id="resultArea">
+    <h4><i class="fas fa-star"></i>你的號碼</h4>
+    <p>點擊「產生號碼」開始！</p>
+</div>
