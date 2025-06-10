@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ page.language }}">
     <head>
-        <title>{{ page.title }} - {{ site.title }}</title>
+        {% if page.layout == "home" %}
+        <title>{{ site.title }} - {{ site.subtitle }}</title>
+        {% elsif page.subtitle %}
+        <title>{{ page.title }} : {{ page.subtitle }} | {{ site.title }}</title>
+        {% else %}
+        <title>{{ page.title }} | {{ site.title }}</title>
+        {% endif %}
         
         <link rel="icon" sizes="any" type="image/svg+xml" href="/favicon.svg">
         <link rel="apple-touch-icon" sizes="any" type="image/svg+xml" href="/favicon.svg">
