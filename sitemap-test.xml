@@ -1,12 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://easytools1221.github.io/</loc>
-    <lastmod>2025-06-10</lastmod>
-  </url>
-  <url>
-    <loc>https://easytools1221.github.io/tools/discount-calc</loc>
-    <lastmod>2025-06-10</lastmod>
-  </url>
-</urlset>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
+
+<url>
+  <loc>https://easytools1221.github.io/</loc>
+  <lastmod>2025-06-10T14:48:06+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://easytools1221.github.io/tools/discount-calc</loc>
+  <lastmod>2025-06-10T14:48:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://easytools1221.github.io/tools/lottery-generator</loc>
+  <lastmod>2025-06-10T14:48:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://easytools1221.github.io/tools/powerbank</loc>
+  <lastmod>2025-06-10T14:48:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://easytools1221.github.io/tools/weight-convt</loc>
+  <lastmod>2025-06-10T14:48:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://easytools1221.github.io/tools/tempt-convt</loc>
+  <lastmod>2025-06-10T14:48:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://easytools1221.github.io/tools/resistor-calc</loc>
+  <lastmod>2025-06-10T14:48:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://easytools1221.github.io/tools/radix-convt</loc>
+  <lastmod>2025-06-10T14:48:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://easytools1221.github.io/tools/microwave-calc</loc>
+  <lastmod>2025-06-10T14:48:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://easytools1221.github.io/tools/length-convt</loc>
+  <lastmod>2025-06-10T14:48:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://easytools1221.github.io/tools/draw</loc>
+  <lastmod>2025-06-10T14:48:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://easytools1221.github.io/tools/date-calc</loc>
+  <lastmod>2025-06-10T14:48:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://easytools1221.github.io/tools/bmi-calc</loc>
+  <lastmod>2025-06-10T14:48:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://easytools1221.github.io/tools/area-convt</loc>
+  <lastmod>2025-06-10T14:48:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://easytools1221.github.io/about</loc>
+  <lastmod>2025-06-10T14:48:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://easytools1221.github.io/en/tools/discount-calc</loc>
+  <lastmod>2025-06-10T14:48:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
