@@ -33,11 +33,7 @@ function insert_ads_card_list(){
             card.parentNode.insertBefore(card_node, card.nextSibling);
 
             ads_count++; // 記錄插入的廣告數量
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
         }
     })
-
-    if(ads_count > 0){
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-    }
-
 }
