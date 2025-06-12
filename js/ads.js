@@ -26,7 +26,7 @@ function insert_ads_card_list(){
             insElement.setAttribute('data-ad-slot', adSlot);
             insElement.setAttribute('data-ad-format', adFormat);
             //insElement.setAttribute('data-ad-layout-key', adLayoutKey);
-            insElement.setAttribute('data-full-width-responsive', "true");
+            insElement.setAttribute('data-full-width-responsive', "false");
 
             card_body.appendChild(insElement);
 
