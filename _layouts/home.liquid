@@ -5,7 +5,7 @@ layout: default
 <div class="container">
     <h2>最新小工具</h2>
     {% assign tools_pages = site.tools | concat: site.tools_en | sort: "last_modified_at" | reverse %}
-    <div class="row g-4">
+    <div id="tools_list" class="row g-4">
     {% for page in tools_pages %}
         <div class="col-md-6 col-lg-4">
             <div class="card shadow-sm h-100">
@@ -21,3 +21,5 @@ layout: default
     {% endfor %}
     </div>
 </div>
+
+<script defer src="/js/ads.js" onload="insert_ads_card_list()"></script>
