@@ -6,9 +6,9 @@ function insert_ads_card_list(){
     const ads_insert_interval = 4
 
     const adClient = 'ca-pub-7255560333193386';
-    const adSlot = '1706287114';
-    const adFormat = 'fluid'; 
-    const adLayoutKey = '-gw-3+1f-3d+2z';
+    const adSlot = '1316803674';
+    const adFormat = 'auto'; 
+    //const adLayoutKey = '-gw-3+1f-3d+2z';
     
     let ads_count = 0
 
@@ -25,7 +25,8 @@ function insert_ads_card_list(){
             insElement.setAttribute('data-ad-client', adClient);
             insElement.setAttribute('data-ad-slot', adSlot);
             insElement.setAttribute('data-ad-format', adFormat);
-            insElement.setAttribute('data-ad-layout-key', adLayoutKey);
+            //insElement.setAttribute('data-ad-layout-key', adLayoutKey);
+            insElement.setAttribute('data-full-width-responsive', "true");
 
             card_body.appendChild(insElement);
 
