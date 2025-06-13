@@ -2,7 +2,7 @@
 
 function insert_ads_card_list(){
     const card_list_container = document.getElementById("tools_list")    
-    const cards = card_list_container.querySelectorAll(".col-md-6.col-lg-4")
+    const cards = card_list_container.querySelectorAll(".tools_item.col-md-6.col-lg-4")
     const ads_insert_interval = 4
 
     const adClient = 'ca-pub-7255560333193386';
@@ -22,6 +22,7 @@ function insert_ads_card_list(){
             const insElement = document.createElement('ins');
             insElement.className = 'adsbygoogle';
             insElement.style.display = 'block';
+            insElement.style.overflow = 'auto';
             insElement.setAttribute('data-ad-client', adClient);
             insElement.setAttribute('data-ad-slot', adSlot);
             insElement.setAttribute('data-ad-format', adFormat);
