@@ -22,7 +22,6 @@ function insert_ads_card_list(){
             const insElement = document.createElement('ins');
             insElement.className = 'adsbygoogle';
             insElement.style.display = 'block';
-            insElement.style.overflow = 'auto';
             insElement.setAttribute('data-ad-client', adClient);
             insElement.setAttribute('data-ad-slot', adSlot);
             insElement.setAttribute('data-ad-format', adFormat);
@@ -30,6 +29,8 @@ function insert_ads_card_list(){
             insElement.setAttribute('data-full-width-responsive', "false");
 
             card_body.appendChild(insElement);
+
+            card_body.style.overflow = 'auto';
 
             // 將廣告容器插入到當前卡片之後
             card.parentNode.insertBefore(card_node, card.nextSibling);
