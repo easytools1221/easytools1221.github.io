@@ -2,12 +2,33 @@
 layout: default
 ---
 
-<div class="container">
-    <h2>最新小工具</h2>
-    {% assign tools_pages = site.tools | concat: site.tools_en | sort: "last_modified_at" | reverse %}
-    <div id="tools_list" class="row g-4">
-    {% for page in tools_pages %}
-        <div class="col-md-6 col-lg-4">
+<div class="container mb-3">
+    <h2>精選小工具</h2>
+    {% assign tools_pages = site.tools | where: "star", "true" %}
+    <div id="star_tools_list" class="row g-4">
+    {% for page in tools_pages limit:3 %}
+        <div class="tools_item col-md-6 col-lg-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="{{page.url}}">{{ page.title }}</a></h5>
+                    <p class="card-text">{{ page.star_description }}</p>
+                    {% if jekyll.environment == "development" %}
+                        <p>最後更新時間: {{ page.last_modified_at }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+
+</div>
+
+<div class="container mb-3">
+    <h2>最新文章</h2>
+    {% assign posts = site.posts | sort: "last_modified_at" | reverse %}
+    <div id="posts_list" class="row g-4">
+    {% for page in posts limit:4 %}
+        <div class="post_item">
             <div class="card shadow-sm h-100">
                 <div class="card-body">
                     <h5 class="card-title"><a href="{{page.url}}">{{ page.title }}</a></h5>
@@ -21,5 +42,26 @@ layout: default
     {% endfor %}
     </div>
 </div>
+
+<div class="container mb-3">
+    <h2>最新小工具</h2>
+    {% assign tools_pages = site.tools | concat: site.tools_en | sort: "last_modified_at" | reverse %}
+    <div id="tools_list" class="row g-4">
+    {% for page in tools_pages %}
+        <div class="tools_item col-md-6 col-lg-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="{{page.url}}">{{ page.title }}</a></h5>
+                    <p class="card-text">{{ page.description }}</p>
+                    {% if jekyll.environment == "development" %}
+                        <p>最後更新時間: {{ page.last_modified_at }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+
 
 <script defer src="/js/ads.js" onload="insert_ads_card_list()"></script>
