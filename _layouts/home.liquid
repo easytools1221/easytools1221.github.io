@@ -23,6 +23,7 @@ layout: default
 
 </div>
 
+{% if site.posts != empty %}
 <div class="container mb-3">
     <h2>最新文章</h2>
     {% assign posts = site.posts | sort: "last_modified_at" | reverse %}
@@ -42,6 +43,7 @@ layout: default
     {% endfor %}
     </div>
 </div>
+{% endif %}
 
 <div class="container mb-3">
     <h2>最新小工具</h2>
