@@ -1,34 +1,37 @@
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col-4 text-center">
             <label>預計加熱功率(W)<input class="form-control" type="number" inputmode="numeric" id="exp-power" value="700"></label>
+        </div>
+        <div class="col-4 text-center">
             <label>預計加熱時間(分鐘)<input class="form-control" type="number" inputmode="numeric" id="exp-min" value="2"></label>
+        </div>
+        <div class="col-4 text-center">
             <label>預計加熱時間(秒)<input class="form-control" type="number" inputmode="numeric" id="exp-sec" value="0"></label>
         </div>
     </div>
+    
+    <hr>
+
     <div class="row">
-        <div class="col">
+        <div class="col text-center">
             <label>你的微波爐功率(W)<input class="form-control" type="number" inputmode="numeric" id="oven-power" value="900"></label>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col text-center">
             <button id="calc" class="btn btn-primary">計算加熱時間</button>
         </div>
     </div>
+
+    <hr>
+
     <div class="row">
-        <div class="col">
+        <div class="col text-center">
             <label>加熱時間(分鐘)<input class="form-control" type="number" inputmode="numeric" id="oven-min" readonly></label>
             <label>加熱時間(秒)<input class="form-control" type="number" inputmode="numeric" id="oven-sec" readonly></label>
         </div>
     </div>
 </div>
 
-<script>
-    $("#calc").on("click", function(){
-        var power = parseInt($("#exp-power").val())
-        var exp_time = parseInt($("#exp-min").val()) * 60 + parseInt($("#exp-sec").val())
-        var oven_power = parseInt($("#oven-power").val())
-
-        var oven_time = Math.floor((power * exp_time) / oven_power)
-
-        $("#oven-min").val(Math.floor(oven_time / 60))
-        $("#oven-sec").val(oven_time % 60)
-    })
-</script>

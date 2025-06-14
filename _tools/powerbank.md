@@ -1,9 +1,11 @@
 ---
 title: 行動電源計算工具
 language: zh-tw
-layout: tools_v2
+layout: tools_v3
 description: 這是行動電源計算工具，幫助您快速換算行動電源的容量單位，以及評估要購買多大的行動電源來符合您的需求。
 order: 0
+star: true
+star_description: 你的行動電源可以充幾次手機？
 ---
 
 ## 電池或行動電源的容量
