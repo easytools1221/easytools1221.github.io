@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.language }}">
+<html lang="{{ page.language }}" data-bs-theme="light">
     <head>
         {% if page.layout == "home" %}
         <title>{{ site.title }} - {{ site.subtitle }}</title>
@@ -63,7 +63,7 @@
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
 
-        <nav class="navbar navbar-expand-lg sticky-top bg-primary" data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg sticky-top bg-primary-subtle" data-bs-theme="">
             <div class="container-md">
                 <a id="name" class="navbar-brand" href="/">{{ site.title }}</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,7 +74,7 @@
                         <a class="nav-link" href="/">首頁</a>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">工具</a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu p-2">
                                 {% assign tools_pages = site.tools | sort: "last_modified_at" | reverse %}
                                 {% for page in tools_pages %}
                                     <li> <a class="nav-link" href="{{ page.url }}">{{ page.title }}</a> </li>

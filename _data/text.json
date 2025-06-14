@@ -3,6 +3,7 @@
         "discount_calc": {
             "zh-tw": {
                 "original_price": "原始金額",
+                "ori_price_hint": "在此輸入金額",
                 "discount_percentage": "折數",
                 "discounted_price": "折扣後金額",
                 "discounted_savings": "折扣省下了...",
@@ -17,6 +18,7 @@
             },
             "en": {
                 "original_price": "Original price",
+                "ori_price_hint": "Enter your price here",
                 "discount_percentage": "Discount percentage",
                 "discounted_price": "Discounted price",
                 "discounted_savings": "Discounted savings",

@@ -5,13 +5,13 @@ layout: default
 <div class="container mb-3">
     <h2>精選小工具</h2>
     {% assign tools_pages = site.tools | where: "star", "true" %}
-    <div id="star_tools_list" class="row g-4">
+    <div id="star_tools_list" class="d-flex overflow-x-auto gap-4 no-scrollbar scroll-smooth">
     {% for page in tools_pages limit:3 %}
-        <div class="tools_item col-md-6 col-lg-4">
+        <div class="tools_item col-8 col-md-6 col-lg-4">
             <div class="card shadow-sm h-100">
                 <div class="card-body">
-                    <h5 class="card-title"><a href="{{page.url}}">{{ page.title }}</a></h5>
-                    <p class="card-text">{{ page.star_description }}</p>
+                    <h5 class="card-title">&#9734<a href="{{page.url}}">{{ page.title }}</a></h5>
+                    <p class="card-text fst-italic">{{ page.star_description }}</p>
                     {% if jekyll.environment == "development" %}
                         <p>最後更新時間: {{ page.last_modified_at }}</p>
                     {% endif %}

@@ -2,8 +2,14 @@
 ---
 
 body
-    background-color: #f2f2f2
     font-family: 'Inter', 'Noto Sans TC', sans-serif;
+
+[data-bs-theme=light] body
+    background-color: #f2f2f2
+    transition: background-color 0.5s, color 0.5s
+
+[data-bs-theme=dark] body
+    transition: background-color 0.5s, color 0.5s
 
 .card
     margin: auto
@@ -11,3 +17,16 @@ body
 .card:hover
     transform: translateY(-3px)
     transition: transform 0.2s
+
+/* 隱藏滾動條但保留滾動功能 */
+.no-scrollbar::-webkit-scrollbar
+    display: none;
+
+.no-scrollbar 
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+/* 確保滾動順暢 */
+.scroll-smooth 
+    scroll-behavior: smooth;
+
