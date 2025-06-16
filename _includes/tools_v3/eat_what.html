@@ -1,0 +1,35 @@
+<div class="container p-4 p-md-5 text-center col-12 col-md-8 col-lg-6">
+    <div class="d-flex flex-wrap justify-content-center gap-2 mb-4" id="mealTypeButtons">
+        <!-- Buttons will be rendered here by JS -->
+    </div>
+
+    <!-- 食物選項列表及編輯功能 -->
+    <div class="p-4 bg-light rounded-3 shadow-sm mt-4">
+        <h2 class="h4 text-start mb-3" id="currentMealTypeTitle"></h2>
+        <div id="foodOptionsList" class="d-flex flex-wrap gap-2 mb-3 text-start">
+            <!-- Food options will be rendered here by JS -->
+        </div>
+
+        <div class="input-group mt-3">
+            <input type="text" class="form-control" id="newFoodInput" placeholder="新增食物...">
+            <button class="btn btn-primary btn-add" type="button" id="addFoodButton">新增</button>
+        </div>
+    </div>
+
+    <!-- 產生建議按鈕 -->
+    <button class="btn btn-generate mt-4 mb-4" id="generateSuggestionButton">
+        <span role="img" aria-label="sparkles" class="me-2">✨</span>
+        給我建議！
+        <span role="img" aria-label="sparkles" class="ms-2">✨</span>
+    </button>
+
+    <!-- 顯示食物建議結果 -->
+    <div id="suggestedFoodResult" class="suggestion-box mt-4">
+        <h2 class="h5 mb-2">
+            <span role="img" aria-label="tada" class="me-2">🎉</span>
+            為您推薦：
+        </h2>
+        <p class="display-6 fw-bold" id="suggestedFoodText">點擊按鈕獲取建議！</p>
+        <p class="text-muted mt-3">希望您喜歡這個建議！</p>
+    </div>
+</div>
