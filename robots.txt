@@ -2,4 +2,6 @@
 ---
 
 User-agent: *
-Sitemap: {{ "sitemap.xml" | absolute_url }}
+Allow: /
+
+Sitemap: {{ "sitemap-my.xml" | absolute_url }}
