@@ -1,0 +1,20 @@
+---
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>{{ site.url }}</loc>
+        {% if site.last_modified_at %}
+        <lastmod>{{ site.last_modified_at | date: "%Y-%m-%dT%H:%M:%S%:z" }}</lastmod>
+        {% endif %}
+    </url>
+{% for page in site.tools %}
+    <url>
+        <loc>{{ site.url }}{{ page.url }}</loc>
+        {% if page.last_modified_at %}
+        <lastmod>{{ page.last_modified_at | date: "%Y-%m-%dT%H:%M:%S%:z" }}</lastmod>
+        {% endif %}
+    </url>
+{% endfor %}
+</urlset>
