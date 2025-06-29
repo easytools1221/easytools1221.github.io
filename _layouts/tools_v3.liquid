@@ -53,9 +53,10 @@ layout: default
     document.getElementById("share-tool-button").addEventListener("click", function(){
         try{
             navigator.clipboard.writeText(document.getElementById("share-tool-link").value)
+            document.getElementById("share-tool-button").innerText = "已複製連結！"
         }
         catch{
-            console.error("clipboard error")
+            document.getElementById("share-tool-button").innerText = "出了小問題！請手動複製連結"
         }
     })
 </script>
