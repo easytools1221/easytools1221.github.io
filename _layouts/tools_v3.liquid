@@ -2,13 +2,11 @@
 layout: default
 ---
 
-<div class="container">
-    <section class="mb-4 text-center">
-        <h1>{{ page.title }}</h1>
-        <p class="text-muted">{{ page.description }}</p>
-    </section>
+<div class="container text-center my-3">
+    <h1>{{ page.title }}</h1>
 </div>
 
+<!-- tool component -->
 <div class="card shadow-sm">
     <div class="card-body">
         {% assign tool_interface = "tools_v3/" |  append: page.slug |  append: '.html'  %}
@@ -18,16 +16,8 @@ layout: default
     </div>
 </div>
 
-<hr>
-
-<div class="container">
-    <p><a class="link-primary" href="/">其他好用的小工具</a></p>
-    <p><a class="link-primary" href="https://forms.gle/qJrDVAUvgbVivikh6">意見回饋</a></p>
-<div>
-
-<hr>
-
-<div class="card">
+<!-- ads -->
+<div class="card my-4">
     <div class="card-header">
         <p class="card-title">贊助商連結</p>
     </div>
@@ -44,7 +34,36 @@ layout: default
     </div>
 </div>
 
+<!-- function buttons -->
+<div class="card p-2">
+    <div class="row my-2">
+        <div class="d-grid col-6 mb-3">
+            <a class="btn btn-outline-info shadow-sm" href="/">其他好用的小工具</a>
+        </div>
+        <div class="d-grid col-6 mb-3">
+            <a class="btn btn-outline-info shadow-sm" href="https://forms.gle/qJrDVAUvgbVivikh6">意見回饋</a>
+        </div>
+        <div class="col-12 input-group">
+            <button class="btn btn-outline-info shadow-sm" type="button" id="share-tool-button">分享這個工具</button>
+            <input type="text" class="form-control" id="share-tool-link" value="{{site.url}}{{page.url}}"  readonly>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById("share-tool-button").addEventListener("click", function(){
+        try{
+            navigator.clipboard.writeText(document.getElementById("share-tool-link").value)
+        }
+        catch{
+            console.error("clipboard error")
+        }
+    })
+</script>
 <hr>
+
+<div class="container my-3">
+    <p class="text-muted">{{ page.description }}</p>
+</div>
 
 <div class="container">
     {{ content }}
