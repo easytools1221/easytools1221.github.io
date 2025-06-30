@@ -2,7 +2,7 @@ services:
     jekyll:
         image: bretfisher/jekyll-serve
         ports:
-            - 4000:4000
+            - 11180:4000
             - 35729:35729
         volumes:
             - .:/site:Z
@@ -10,4 +10,4 @@ services:
             - ./vendor/bundle/:/usr/local/bundle:Z
         environment:
             - TZ=Asia/Taipei
-        command: jekyll serve --force_polling --livereload -H 0.0.0.0
+        command: jekyll serve --force_polling -H 0.0.0.0
