@@ -1,17 +1,15 @@
 {% assign text = site.data.text.tools["discount_calc"][page.language] %}
 
-<div class="container row text-center">
-    <div class="col-lg-6">
+<div class="row text-center">
+    <div class="col-12 mb-3">
         <label>{{ text.original_price }}<input class="form-control" type="number" min="0.0" inputmode="numeric" id="price-input" placeholder="{{ text.ori_price_hint }}"></label>
     </div>
-    <div class="col-lg-6">
-        <label>{{ text.discount_percentage }}<input class="form-control" type="number" inputmode="numeric" id="discount-input" max="1.0" min="0.0" step="0.1" value="0.9"></label>
+    <div class="col-12 mb-3">
+        <label>{{ text.discount_ratio }}<input class="form-control" type="number" inputmode="numeric" id="discount-ratio-input" max="1.0" min="0.0" step="0.01" value="0.9"></label>
+        <label>{{ text.discount_percentage }}<input class="form-control" type="number" inputmode="numeric" id="discount-input" max="100.0" min="0.0" step="1.0" value="90"></label>
+        <label>% off<input class="form-control" type="number" inputmode="numeric" id="discount-off-input" max="100.0" min="0.0" step="1.0" value="10"></label>
     </div>
-    <div class="text-center mt-3 mb-3">
-        <label class="form-check-label"><input class="form-check-input" type="checkbox" id="service-fee" onchange="update_discount_price()">{{ text.service_charge }}</label>
-        <label class="form-check-label"><input class="form-check-input" type="checkbox" id="service-ori" onchange="update_discount_price()">{{ text.ori_service_charge }}</label>
-    </div>
-    <div class="text-center mb-3">
+    <div class="col-12 border text-center py-3 bg-primary-subtle">
         <label class="form-lable d-block">{{ text.common_discounts }}</label>
         <div class="btn-group" role="group">
             <button class="btn btn-outline-primary" onclick="quick_discount(1.0)">{{ text.discount_none }}</button>
@@ -20,6 +18,11 @@
             <button class="btn btn-outline-primary" onclick="quick_discount(0.9)">{{ text.discount_10 }}</button>
             <button class="btn btn-outline-primary" onclick="quick_discount(0.95)">{{ text.discount_5 }}</button>
         </div>
+    </div>
+
+    <div class="col-12 border text-center py-3 bg-secondary-subtle">
+        <label class="form-check-label"><input class="form-check-input" type="checkbox" id="service-fee" onchange="update_discount_price()">{{ text.service_charge }}</label>
+        <label class="form-check-label"><input class="form-check-input" type="checkbox" id="service-ori" onchange="update_discount_price()">{{ text.ori_service_charge }}</label>
     </div>
 
     <hr>
