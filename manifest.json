@@ -3,7 +3,7 @@
     "short_name": "EasyTools",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "skyblue",
+    "background_color": "white",
     "description": "Easy tools to solve your problems.",
     "icons": [
       {
