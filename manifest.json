@@ -7,7 +7,7 @@
     "description": "Easy tools to solve your problems.",
     "icons": [
       {
-        "src": "favicon.svg",
+        "src": "favicon-pwa.svg",
         "sizes": "any",
         "type": "image/svg+xml",
         "purpose": "maskable"
