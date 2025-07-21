@@ -8,8 +8,5 @@
         path {
             stroke: black;
         }
-        @media (prefers-color-scheme: dark) {
-            path { stroke: white; }
-        }
     </style>
 </svg>
