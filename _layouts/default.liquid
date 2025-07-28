@@ -8,6 +8,10 @@
         {% else %}
         <title>{{ page.title }} | {{ site.title }}</title>
         {% endif %}
+
+        {% if jekyll.environment == "production" %}
+            <meta http-equiv="refresh" content="0; url={{ site.url }}{{ page.url }}">
+        {% endif %}
         
         <link rel="icon" sizes="any" type="image/svg+xml" href="/favicon.svg">
         <link rel="apple-touch-icon" sizes="any" type="image/svg+xml" href="/favicon.svg">
@@ -26,7 +30,6 @@
         {% seo title=false %}
 
         {% if jekyll.environment == "production" %}
-            <meta http-equiv="refresh" content="0; url={{ site.url }}{{ page.url }}">
             {% include google_analytics.html %}
             {% include google_ads.html %}
         {% endif %}
