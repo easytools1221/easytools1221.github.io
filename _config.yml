@@ -11,6 +11,7 @@ plugins:
     - jekyll-last-modified-at
     - jekyll-seo-tag
     - kramdown
+    - jekyll-redirect-from
 
 collections:
     tools:
@@ -26,3 +27,5 @@ kramdown:
 
 last-modified-at:
     date-format: "%Y-%m-%d %H:%M:%S"
+
+redirect_to: https://easytools.bgflow.net

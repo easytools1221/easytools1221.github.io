@@ -2,7 +2,7 @@ services:
     jekyll:
         image: bretfisher/jekyll-serve
         ports:
-            - 11180:4000
+            - 11182:4000
             - 35729:35729
         volumes:
             - .:/site:Z
